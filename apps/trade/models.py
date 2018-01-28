@@ -21,10 +21,10 @@ class ShoppingCart(BaseTrade):
     """
     user = models.ForeignKey(User, verbose_name='用户')
     goods = models.ForeignKey(Goods, verbose_name='商品')
-    goods_num = models.IntegerField(default=0, verbose_name='购买数量')
+    nums = models.IntegerField(default=0, verbose_name='购买数量')
 
     class Meta:
-        verbose_name = ''
+        verbose_name = '购物车'
         verbose_name_plural = verbose_name
 
     def __str__(self):
@@ -70,7 +70,7 @@ class OrderGoods(BaseTrade):
     goods_num = models.IntegerField(default=0, verbose_name='商品数量')
 
     class Meta:
-        verbose_name = ''
+        verbose_name = '订单商品'
         verbose_name_plural = verbose_name
 
     def __str__(self):
