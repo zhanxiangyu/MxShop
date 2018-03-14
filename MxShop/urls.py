@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 """MxShop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -21,7 +22,8 @@ from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
 
 from MxShop.settings import MEDIA_ROOT
-from goods.base_view import GoodsListView
+# from goods.base_view import GoodsListView
+from goods.views import GoodsListView
 
 urlpatterns = [
     url(r'^admin/', xadmin.site.urls),
