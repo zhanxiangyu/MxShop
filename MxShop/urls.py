@@ -29,7 +29,9 @@ urlpatterns = [
     url(r'^admin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 
-    url(r'^goods_list/$', GoodsListView.as_view(), name='goodlist'),
+    url(r'^goods/', include('goods.urls', namespace='goods')),
+
+    # url(r'^goods_list/$', GoodsListView.as_view(), name='goodlist'),
 
     url(r'^docs/', include_docs_urls(title='生鲜文档')),
 
