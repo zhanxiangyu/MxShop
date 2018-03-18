@@ -4,11 +4,12 @@
 
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from .viewset import GoodsViewSet
+from .viewset import GoodsViewSet, CategoryViewSet
 
 router = DefaultRouter()
 
 router.register('goods', GoodsViewSet, base_name='goods')
+router.register('categorys', CategoryViewSet, base_name='categorys')
 
 urlpatterns = [
     url('^api/', include(router.urls), name='api')
